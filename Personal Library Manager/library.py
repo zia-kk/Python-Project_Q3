@@ -1,6 +1,7 @@
 import json
 import os
 
+
 data_file = 'library.txt'
 import json
 import os
@@ -80,3 +81,35 @@ def display_statistics(library):
     print(f"Percentage read : {percentage_read:.2f}%")
 
 
+
+def main():
+    library = load_library()
+    while True:
+        print("Welcome to the library manager")
+        print("Manu")
+        print("1. Add a book")
+        print("2. Remove a book")
+        print("3. Search the library")
+        print("4. Display all books")
+        print("5. Display statistics")
+        print("6. Exit")
+
+        choice = input("Enter your choice: ")
+        if choice == '1':
+            add_book(library)
+        elif choice == '2':
+            remove_book(library)
+        elif choice == '3':
+            search_library(library)
+        elif choice == '4':
+            display_all_books(library)
+        elif choice == '5':
+            display_statistics(library)
+        elif choice == '6':
+            print("Goodbye!")
+            break
+        else :
+            print("Invalid choice. Please try again.")
+
+if __name__ == '__main__':
+    main()
